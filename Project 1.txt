@@ -1,0 +1,18 @@
+LearnMate-AI/
+│
+├── .venv/
+├── .env
+├── .gitignore
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── prompts/
+│     └── system_prompt.py
+│
+├── utils/
+│     └── gemini.py
+│
+├── assets/
+├── screenshots/
+└── pages/
