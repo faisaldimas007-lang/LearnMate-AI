@@ -1,15 +1,60 @@
 import streamlit as st
 
+from components.chat import add_message, display_chat
+from components.home import render_home
 from components.sidebar import render_sidebar
 from services.gemini_service import ask_gemini
-from components.home import render_home
 from utils.pdf_reader import read_pdf
-from components.chat import display_chat, add_message
+
 
 st.set_page_config(
     page_title="LearnMate AI",
     page_icon="🎓",
-    layout="wide"
+    layout="wide",
+)
+
+st.markdown(
+    """
+    <style>
+    .block-container {
+        max-width: 1100px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    section[data-testid="stSidebar"] {
+        border-right: 1px solid rgba(128, 128, 128, 0.2);
+    }
+
+    .stButton > button {
+        border-radius: 10px;
+        font-weight: 600;
+        min-height: 44px;
+    }
+
+    div[data-testid="stChatInput"] {
+        border-radius: 12px;
+    }
+
+    div[data-testid="stChatMessage"] {
+        border-radius: 14px;
+        padding: 0.5rem;
+        margin-bottom: 0.6rem;
+    }
+
+    div[data-testid="stMetric"] {
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        padding: 10px;
+        border-radius: 12px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 # Inisialisasi session state
