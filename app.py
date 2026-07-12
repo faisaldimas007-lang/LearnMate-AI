@@ -1,11 +1,11 @@
 import streamlit as st
 
 from components.chat import add_message, display_chat
+from components.csv_viewer import render_csv_viewer
 from components.home import render_home
 from components.sidebar import render_sidebar
+from components.uploaders import render_uploaders
 from services.gemini_service import ask_gemini
-from utils.pdf_reader import read_pdf
-
 
 st.set_page_config(
     page_title="LearnMate AI",
@@ -70,25 +70,22 @@ if "pdf_count" not in st.session_state:
 # Sidebar dipanggil setelah session state tersedia
 mode, level, style, detail = render_sidebar()
 
-uploaded_file = st.sidebar.file_uploader(
-    "📄 Upload Materi PDF",
-    type=["pdf"]
-)
-
-pdf_text = ""
-
-if uploaded_file:
-    if st.session_state.get("last_pdf_name") != uploaded_file.name:
-        st.session_state.pdf_count += 1
-        st.session_state.last_pdf_name = uploaded_file.name
-
-    pdf_text = read_pdf(uploaded_file)
-    st.sidebar.success("✅ PDF berhasil dibaca!")
+# Upload
+pdf_text, dataframe = render_uploaders()
 
 # Header
-st.title("🎓 LearnMate AI")
-st.caption("AI Learning Assistant untuk membantu belajar")
+st.markdown("# 🎓 LearnMate AI")
+st.markdown(
+    """
+**Asisten belajar berbasis Gemini AI** yang membantu proses belajar
+menjadi mudah dan menyenangkan.
+"""
+)
 
+st.divider()
+
+# CSV
+render_csv_viewer(dataframe)
 
 # Quick action
 quick_prompt = None

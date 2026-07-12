@@ -8,6 +8,10 @@ Aplikasi dapat diakses melalui:
 
 https://learnmate-ai-education.streamlit.app/
 
+## 📸 Tampilan Aplikasi
+
+![Tampilan LearnMate AI](screenshots/home.png)
+
 ## ✨ Fitur
 
 - 💬 Chatbot pendidikan berbasis Gemini AI
