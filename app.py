@@ -6,12 +6,15 @@ from components.home import render_home
 from components.sidebar import render_sidebar
 from components.uploaders import render_uploaders
 from services.gemini_service import ask_gemini
+from utils.style_loader import load_css
 
 st.set_page_config(
     page_title="LearnMate AI",
     page_icon="🎓",
     layout="wide",
 )
+
+load_css("assets/style.css")
 
 st.markdown(
     """
@@ -74,12 +77,17 @@ mode, level, style, detail = render_sidebar()
 pdf_text, dataframe = render_uploaders()
 
 # Header
-st.markdown("# 🎓 LearnMate AI")
 st.markdown(
     """
-**Asisten belajar berbasis Gemini AI** yang membantu proses belajar
-menjadi mudah dan menyenangkan.
-"""
+    <div class="hero">
+        <p class="hero-title">🎓 LearnMate AI</p>
+        <p class="hero-subtitle">
+            Asisten belajar berbasis Gemini AI yang membantu proses belajar
+            menjadi mudah dan menyenangkan.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
 )
 
 st.divider()

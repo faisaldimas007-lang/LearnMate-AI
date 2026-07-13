@@ -71,7 +71,7 @@ def render_sidebar():
         )
 
     st.sidebar.metric(
-        "PDF Dibaca",
+        "PDF",
         st.session_state.get("pdf_count", 0),
     )
 
@@ -83,18 +83,6 @@ def render_sidebar():
         st.rerun()
 
     st.sidebar.markdown("---")
-
-    st.sidebar.info(
-        """
-🎯 **LearnMate AI**
-
-Asisten belajar berbasis Gemini AI.
-
-"""
-    )
-
-    st.sidebar.caption(
-        "Developed with ❤️ by Dimas Faisal Zulmi"
-    )
+    st.sidebar.caption("Dibuat oleh Dimas Faisal Zulmi")
 
     return mode, level, style, detail

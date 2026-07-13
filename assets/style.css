@@ -1,0 +1,73 @@
+.block-container {
+    max-width: 1150px;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.hero {
+    padding: 1.8rem 2rem;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        rgba(79, 70, 229, 0.12),
+        rgba(14, 165, 233, 0.10)
+    );
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    margin-bottom: 1.4rem;
+}
+
+.hero-title {
+    font-size: 2.35rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.8;
+    margin-top: 0.55rem;
+}
+
+.feature-card {
+    padding: 1.1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.18);
+    background: rgba(255, 255, 255, 0.55);
+    min-height: 120px;
+    margin-bottom: 0.8rem;
+}
+
+.feature-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+div[data-testid="stChatMessage"] {
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    border-radius: 16px;
+    padding: 0.65rem;
+    margin-bottom: 0.7rem;
+}
+
+div[data-testid="stMetric"] {
+    border: 1px solid rgba(128, 128, 128, 0.16);
+    border-radius: 14px;
+    padding: 0.7rem;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.stButton > button {
+    border-radius: 12px;
+    min-height: 44px;
+    font-weight: 650;
+}
+
+section[data-testid="stSidebar"] {
+    border-right: 1px solid rgba(128, 128, 128, 0.15);
+}
