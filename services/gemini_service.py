@@ -34,38 +34,43 @@ def ask_gemini(
     level,
     style,
     detail,
-    pdf_text=""
+    pdf_context="",
 ):
 
     prompt = f"""
 {SYSTEM_PROMPT}
 
-MODE:
+MODE BELAJAR:
 {mode}
 
-TINGKAT:
+TINGKAT PENDIDIKAN:
 {level}
 
-STYLE:
+GAYA BAHASA:
 {style}
 
-DETAIL:
+TINGKAT DETAIL:
 {detail}
 
-======================
+========================
+KONTEKS DARI DOKUMEN PDF
+========================
 
-Materi PDF:
+{pdf_context if pdf_context else "Tidak ada konteks PDF yang relevan."}
 
-{pdf_text}
-
-======================
-
-Pertanyaan:
+========================
+PERTANYAAN PENGGUNA
+========================
 
 {question}
 
-Jika terdapat isi PDF, prioritaskan menjawab berdasarkan isi PDF.
-Jika tidak ada informasi yang relevan di PDF, jelaskan bahwa jawabannya berasal dari pengetahuan umum.
+ATURAN PENTING:
+
+1. Jika konteks PDF tersedia, prioritaskan konteks tersebut.
+2. Jangan mengarang isi dokumen yang tidak tersedia.
+3. Sertakan nomor halaman saat menggunakan informasi PDF.
+4. Jika konteks PDF tidak cukup untuk menjawab, katakan dengan jelas.
+5. Jangan mengatakan telah membaca seluruh dokumen jika hanya menerima beberapa bagian.
 """
 
     response = client.models.generate_content(

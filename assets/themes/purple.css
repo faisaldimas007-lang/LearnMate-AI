@@ -1,0 +1,13 @@
+:root {
+    --app-bg: #faf5ff;
+    --sidebar-bg: #fdf4ff;
+    --surface-bg: #ffffff;
+    --surface-soft: #f3e8ff;
+    --text-main: #3b0764;
+    --text-muted: #7e22ce;
+    --primary: #9333ea;
+    --primary-hover: #7e22ce;
+    --border-color: rgba(147, 51, 234, 0.18);
+    --chat-bg: rgba(255, 255, 255, 0.88);
+    --shadow: 0 10px 30px rgba(126, 34, 206, 0.1);
+}

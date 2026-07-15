@@ -2,8 +2,31 @@ import streamlit as st
 
 
 def render_sidebar():
-    st.sidebar.title("🎓 LearnMate AI")
-    st.sidebar.caption("Personal AI Learning Assistant")
+    st.sidebar.markdown(
+    """
+    <div class="sidebar-brand">
+        <div class="sidebar-brand-icon">🎓</div>
+        <div class="sidebar-brand-text">
+            <div class="sidebar-brand-title">LearnMate AI</div>
+            <div class="sidebar-brand-subtitle">
+                Personal AI Learning Assistant
+            </div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+    )
+
+    theme = st.sidebar.selectbox(
+        "🎨 Tema Tampilan",
+        [
+            "🌞 Light",
+            "🌙 Dark",
+            "🌊 Ocean",
+            "💜 Purple",
+        ],
+        key="selected_theme",
+    )
 
     st.sidebar.markdown("---")
 
@@ -85,4 +108,4 @@ def render_sidebar():
     st.sidebar.markdown("---")
     st.sidebar.caption("Dibuat oleh Dimas Faisal Zulmi")
 
-    return mode, level, style, detail
+    return mode, level, style, detail, theme
